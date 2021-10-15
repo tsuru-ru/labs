@@ -1,0 +1,53 @@
+print('\n1. Введите целые числа А и B.')
+A = int(input('Введите А = '))
+B = int(input('Введите В = '))
+if A != B:
+    if A > B:
+        B = A
+    else:
+        A = B
+else:
+    A, B = 0, 0
+print('Новые значения А и В - ', A, B)
+
+print('\n2. Введите целые числа A, B, C. Мы найдем сумму двух натбольших')
+trash = []
+trash.append(int(input('Введите А = ')))
+trash.append(int(input('Введите В = ')))
+trash.append(int(input('Введите С = ')))
+trash = trash.sort()
+print(sum(trash[1:]))
+
+print('\n3. Введите целые числа A, B, C. Мы определим, какая ближе к А')
+trash = []
+trash.append(int(input('Введите А = ')))
+trash.append(int(input('Введите В = ')))
+trash.append(int(input('Введите С = ')))
+AB = abs(trash[0] - trash[1])
+AC = abs(trash[0] - trash[2])
+if AB > AC:
+    print(f'Точка В ближе к А на {AB}')
+else:
+    print(f'Точка C ближе к А на {AC}')
+
+print('\n4. Введите координаты точки, не лежащей на координатных осях OX и OY.')
+x = input("Введите x = ")
+y = input("Введите y = ")
+a = [int(i) for i in n]
+if x > 0:
+    if y > 0:
+        print('1')
+    else:
+        print('2')
+else:
+    if y > 0:
+        print('4')
+    else:
+        print('3')
+
+print('\n5. Введите целое число для его описания.')
+n = input("Введите число = ")
+
+
+print('\n6. Введите целое число для его описания.')
+a = int(input('Введите а = '))
