@@ -8,46 +8,65 @@ if A != B:
         A = B
 else:
     A, B = 0, 0
-print('Новые значения А и В - ', A, B)
+print('Новые значения А и В - A =', A, 'B = ', B)
 
-print('\n2. Введите целые числа A, B, C. Мы найдем сумму двух натбольших')
+print('\n2. Введите целые числа A, B, C. Мы найдем сумму двух наибольших')
 trash = []
-trash.append(int(input('Введите А = ')))
-trash.append(int(input('Введите В = ')))
-trash.append(int(input('Введите С = ')))
-trash = trash.sort()
-print(sum(trash[1:]))
+a=int(input('Введите А = '))
+trash.append(a)
+b = int(input('Введите В = '))
+trash.append(b)
+c = int(input('Введите С = '))
+trash.append(c)
+print(sum(sorted(trash)[1:]))
 
-print('\n3. Введите целые числа A, B, C. Мы определим, какая ближе к А')
+print('\n3. Введите целые числа - коордианты точек A, B, C. Мы определим, какая ближе к А')
 trash = []
 trash.append(int(input('Введите А = ')))
 trash.append(int(input('Введите В = ')))
 trash.append(int(input('Введите С = ')))
 AB = abs(trash[0] - trash[1])
 AC = abs(trash[0] - trash[2])
-if AB > AC:
+if AB < AC:
     print(f'Точка В ближе к А на {AB}')
 else:
     print(f'Точка C ближе к А на {AC}')
 
 print('\n4. Введите координаты точки, не лежащей на координатных осях OX и OY.')
-x = input("Введите x = ")
-y = input("Введите y = ")
-a = [int(i) for i in n]
+x = int(input("Введите x = "))
+y = int(input("Введите y = "))
 if x > 0:
     if y > 0:
-        print('1')
+        print('Точка А лежит в четверти номер 1')
     else:
-        print('2')
+        print('Точка А лежит в четверти номер 2')
 else:
     if y > 0:
-        print('4')
+        print('Точка А лежит в четверти номер 4')
     else:
-        print('3')
+        print('Точка А лежит в четверти номер 3')
 
 print('\n5. Введите целое число для его описания.')
-n = input("Введите число = ")
+n = int(input("Введите число = "))
+if n == 0:
+    print('Нулевое чсило')
+else:
+    if n % 2 == 0:
+        if n > 0:
+            print('Положительное четное число')
+        else:
+            print('Отрицаиельное четное число')
+    else:
+        if n > 0:
+            print('Положительное нечетное число')
+        else:
+            print('Отрицаиельное нечетное число')
+        
 
-
-print('\n6. Введите целое число для его описания.')
+print('\n6. Введите целое число в диапазоне 1 - 999 для его описания.')
 a = int(input('Введите а = '))
+size = ['', 'однозначное', 'двузначное', 'трехзначное']
+if a % 2 == 0:
+    print(f'Четное {size[len(str(a))]} число')
+else:
+    print(f'Нечетное {size[len(str(a))]} число')
