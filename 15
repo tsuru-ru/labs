@@ -1,0 +1,60 @@
+def PowerA3(a):
+    b = a ** 3
+    return b
+print('Задание 1 .'
+      '\nВведите пять вещественных чисел. С помощью нашей функции мы найдем их третьи степени.')
+for i in range(5):
+    print(f'Введите {i+1}-ое число:')
+    print('Данное число в третьей стпени =', PowerA3(float(input())))
+
+
+def Sign(x):
+    if x < 0:
+        return -1
+    elif x > 0:
+        return 1
+    else:
+        return 0
+print("\nЗадание 2. \nВведите два вещетвенных числа А и В. Мы найдем значение выражения Sign(A) + Sign(B).")
+A = float(input('Введите А: '))
+B = float(input('Введите В: '))
+print('Sign(A) + Sign(B) =', Sign(A) + Sign(B))
+
+def RingS(R1, R2):
+    return (3.14 * (R1 - R2)*(R1 + R2))
+print('\nЗадание 3. \nВведите внутрение и внешние радиусы трех колец для нахождения их площадей')
+for i in range(3):
+    r1 = float(input('Введите внешний радиус - '))
+    r2 = float(input('Введите внутрений радиус - '))
+    print(f'Площадь {i+1}-ого кольца =', RingS(r1, r2))
+
+def Quarter(x, y):
+    if x == 0 and y == 0:
+        print('Нулевая точка.')
+    elif x == 0 or y == 0:
+        return 'Точка на оси координат.'
+    elif x > 0 and y > 0:
+        return 'Точка находится в 1 четверти.'
+    elif x > 0 and y < 0:
+        return 'Точка находится во 2 четверти.'
+    elif x < 0 and y > 0:
+        return 'Точка находится в 3 четверти.'
+    elif x < 0 and y < 0:
+        return 'Точка находится в 4 четверти.'
+print('\nЗадание 4.\nВведите координаты трех точек, чтобы узнать в какой четверти она находится.')
+for i in range(3):
+    x = float(input('Введите координату х = '))
+    y = float(input('Введите координату у = '))
+    print(f'Точка {i + 1} находится в {Quarter(x, y)}')
+
+def fact2(n):
+    a = 1
+    if n % 2 == 0:
+        for i in range(2, n + 1, 2):
+            a *= i
+    else:
+        for i in range(1, n+1, 2):
+            a*= i
+    return a
+print('\nЗадача 5.\nВведите число для определения его двойного факториала.')
+print(fact2(int(input())))
