@@ -1,0 +1,57 @@
+
+def massiv(n):
+    rez = []
+    i = 0
+    while len(rez) < n:
+        if i % 2 != 0:
+            rez += [i]
+        i += 1
+    return rez
+print('Задание 1. Введите целове число N (> 0). Результатом будет массив из первых N нечетных чисел.')
+print(massiv(int(input('Введите N: '))))
+
+def ge_progress(a, d, n):
+    rez = []
+    for i in range(n):
+        rez += [a * (d**i)]
+    return rez
+print('\nЗадание 2. Введите целое число N (> 1), а также первый член A и знаменатель D геометрической прогрессии. Результатом будет массив геометрической прогрессии.')
+A = float(input('Введите А: '))
+N = int(input('Введите N: '))
+D = float(input('Введите D: '))
+print(ge_progress(A, D, N))
+
+def sum_massiv(n, a, b):
+    rez = [a, b]
+    for i in range(n-2):
+        rez += [sum(rez)]
+    return rez
+print('\nЗадача 3. Введите целые числа N (> 2), A и B. Результатом программы будет целочисленный массив размера N, \nпервый элемент которого равен A, второй равен B, \nа каждый последующий элемент равен сумме всех предыдущих')
+A = int(input('Введите А: '))
+B = int(input('Введите B: '))
+N = int(input('Введите N: '))
+print(sum_massiv(N, A, B))
+
+A = input('\nЗадание 4. Введите элементы массива A через пробел: ')
+A = A.split()
+n = len(A) - 1
+for i in range(n//2 + 1):
+    if i != n -i:
+        print(A[i], A[n - i], end=' ')
+    else:
+        print(A[i])
+
+B = input('\nЗадание 5. Введите элементы массива B через пробел: ')
+B = B.split()
+n = len(B)
+print(B)
+p = []
+o = []
+for i in range(n):
+    if i % 2 == 0:
+        p += [B[i]]
+    else:
+        o += [B[i]]
+print('элементы с нечетными номерами в порядке возрастания номеров - ', o)
+
+print('\nэлементы с четными номерами в порядке убывания номеров - ', p[::-1])
