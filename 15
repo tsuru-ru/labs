@@ -15,7 +15,7 @@ def Sign(x):
         return 1
     else:
         return 0
-print("\nЗадание 2. \nВведите два вещетвенных числа А и В. Мы найдем значение выражения Sign(A) + Sign(B).")
+print("\nЗадание 2. \nВведите два вещественных числа А и В. Мы найдем значение выражения Sign(A) + Sign(B).")
 A = float(input('Введите А: '))
 B = float(input('Введите В: '))
 print('Sign(A) + Sign(B) =', Sign(A) + Sign(B))
@@ -28,24 +28,24 @@ for i in range(3):
     r2 = float(input('Введите внутрений радиус - '))
     print(f'Площадь {i+1}-ого кольца =', RingS(r1, r2))
 
-def Quarter(x, y):
+def Quarter(x, y, p):
     if x == 0 and y == 0:
         print('Нулевая точка.')
     elif x == 0 or y == 0:
-        return 'Точка на оси координат.'
+        return f'Точка {p} на оси координат.'
     elif x > 0 and y > 0:
-        return 'Точка находится в 1 четверти.'
+        return f'Точка {p} находится в 1 четверти.'
     elif x > 0 and y < 0:
-        return 'Точка находится во 2 четверти.'
+        return f'Точка {p} находится во 2 четверти.'
     elif x < 0 and y > 0:
-        return 'Точка находится в 3 четверти.'
+        return f'Точка находится в 3 четверти.'
     elif x < 0 and y < 0:
-        return 'Точка находится в 4 четверти.'
+        return f'Точка {p} находится в 4 четверти.'
 print('\nЗадание 4.\nВведите координаты трех точек, чтобы узнать в какой четверти она находится.')
 for i in range(3):
     x = float(input('Введите координату х = '))
     y = float(input('Введите координату у = '))
-    print(f'Точка {i + 1} находится в {Quarter(x, y)}')
+    print(f'{Quarter(x, y, i + 1)}')
 
 def fact2(n):
     a = 1
